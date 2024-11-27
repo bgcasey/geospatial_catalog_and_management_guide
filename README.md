@@ -67,7 +67,7 @@ Once downloaded, data should be stored in separate folders with the following st
 | │   ├── <span style="color:#008E90FF">data.shp</span>                 | Vector data                                                                                             |
 | │   ├── <span style="color:#008E90FF">readme.md</span>                | Readme file includes a product description, citation, and metadata                                      |
 | │   ├── <span style="color:#008E90FF">data_process.{js, R, py}</span> | Script to process spatial data (e.g. calculate indices, mosaic tiles, calculate focal statistics, etc.) |
-| │   ├── <span style="color:#008E90FF">data_extract.R</span>           | R file for summarizing spatial data to point locations                                                  |
+| │   ├── <span style="color:#008E90FF">data_extract.R</span>           | Reproducable R script for summarizing spatial data to point locations                                                  |
 
 
 **Example directory:**
