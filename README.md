@@ -1,25 +1,48 @@
-## External Spatial Data Catalogs
+# Spatial Data Catalog and Management Guide
+![In Development](https://img.shields.io/badge/Status-In%20Development-yellow)
+
+A spatial data catalog and guide for sourcing, organizing, and extracting spatial covariates.
+
+
+---
+
+## Table of Contents
+- [1. External Spatial Data Catalogs](#1-external-spatial-data-catalogs)
+- [2. Spectral Indices](#2-spectral-indices)
+- [3. Scripts for Extracting and Processing Spatial Data](#3-scripts-for-extracting-and-processing-spatial-data)
+- [4. Metadata Standards](#4-metadata-standards)
+- [5. Data Storage](#5-data-storage)
+
+---
+
+## 1. External Spatial Data Catalogs
 
 - [Alberta Government Open Data](https://open.alberta.ca/opendata)
 - [AltaLIS Open Data](https://www.altalis.com/)
 - [Arctic-Boreal Vulnerability Experiment (ABoVE) Products](https://daac.ornl.gov/cgi-bin/dataset_lister.pl?p=34)
 - [Awesome GEE Community Catalog](https://developers.google.com/earth-engine/datasets)
 - [Google Earth Engine Data Catalog](https://developers.google.com/earth-engine/datasets)
-- [National Terrestrial Ecosystem Monitoring System for Canada (NTEMS)](https://opendata.nfis.org/mapserver/nfis-change_eng.html).
+- [National Terrestrial Ecosystem Monitoring System for Canada (NTEMS)](https://opendata.nfis.org/mapserver/nfis-change_eng.html)
 
-Spectral Indices
+---
+
+## 2. Spectral Indices
 
 - [Awesome Spectral Indices](https://github.com/awesome-spectral-indices/awesome-spectral-indices?tab=readme-ov-file)
 
-## Scripts for extracting and processing spatial data
+---
+
+## 3. Scripts for Extracting and Processing Spatial Data
 
 - [Google Earth Engine Functions](https://github.com/bgcasey/google_earth_engine_functions)
 - R
 - ArcGIS Python
 
-## Metadata standards
+---
 
-All spatial data should include a readme `.txt` file with metadata that complies with the **ISO 19115: Geographic information - Metadata standard** and should include:
+## 4. Metadata Standards
+
+All spatial data should include a `readme.txt` file with metadata that complies with the **ISO 19115: Geographic Information - Metadata Standard** and should include:
 
 - **Title**: Dataset name (e.g., "Global Land Cover 2020").
 - **Abstract**: A brief description of the data.
@@ -27,11 +50,14 @@ All spatial data should include a readme `.txt` file with metadata that complies
 - **Temporal extent**: Date range of data collection.
 - **Resolution**: Spatial and temporal.
 - **Source**: Original provider (e.g., NASA, Copernicus).
-- **Licensing**: Usage rights and restrictions
+- **Licensing**: Usage rights and restrictions.
 
-## Data Storage
+---
+
+## 5. Data Storage
 
 Once downloaded, data should be stored in separate folders with the following structure:
+
 
 | **Item**                                                              | **Description**                                                                                         |
 | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
@@ -82,3 +108,5 @@ Once downloaded, data should be stored in separate folders with the following st
 | │   ├── <span style="color:#008E90FF">readme.md</span>                         | Readme file includes a product description, citation, and metadata for canopy CV     |
 | │   ├── <span style="color:#008E90FF">canopy_cv_process.{js, R, py}</span>     | Script to process canopy CV spatial data                                             |
 | │   ├── <span style="color:#008E90FF">canopy_cv_extract.R</span>               | R file for summarizing canopy CV data to point locations                             |
+
+
