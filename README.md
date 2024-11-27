@@ -1,30 +1,12 @@
-rProject_template
+## Metadata standards
 
-The readme for your rProject should include a top level description of the project, and a map of content that describes the directory structure and descriptions of your project files.
+All spatial data should include a readme `.txt` file with metadata that complies with the **ISO 19115: Geographic information - Metadata standard** and should include:
 
+- **Title**: Dataset name (e.g., "Global Land Cover 2020").
+- **Abstract**: A brief description of the data.
+- **Spatial extent**: Bounding coordinates.
+- **Temporal extent**: Date range of data collection.
+- **Resolution**: Spatial and temporal.
+- **Source**: Original provider (e.g., NASA, Copernicus).
+- **Licensing**: Usage rights and restrictions
 
-| **Item**                 | **Description**                   |
-| ------------------------ | --------------------------------- |
-| **0_data/**              | Raw and manipulated data          |
-| ├── external/            | Raw data from external sources    |
-| ├── processed/           | Data that has been manipulated    |
-| **1_code/**              | Code and scripts for analysis     |
-| ├── GEE/                 | Google Earth Engine scripts       |
-| │   └── gee_git_clone.sh | Script to clone GEE repository    |
-| ├── r_scripts/           | R scripts for data processing     |
-| │   └── r_module.R       | Template R script                 |
-| │   └── r_function.R     | Template R function               |
-| **2_pipeline/**          | Data processing pipeline          |
-| **3_output/**            | Results of analysis               |
-| ├── data/                | Processed datasets                |
-| ├── figures/             | Generated figures                 |
-| ├── maps/                | Generated maps                    |
-| ├── models/              | Model outputs                     |
-| └── tables/              | Tables from analysis              |
-| **4_writing/**           | Manuscript and reports            |
-| ├── manuscript/          | Drafts of the manuscript          |
-| └── reports/             | Reports and additional documents  |
-| **5_presentations/**     | Presentation materials            |
-| ├── slides/              | Presentation slides (e.g., .pptx) |
-| └── posters/             | Conference posters                |
-| **README.md**            | Project overview and instructions |
