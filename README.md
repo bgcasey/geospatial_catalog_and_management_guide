@@ -1,19 +1,21 @@
 ## External Spatial Data Catalogs
 
-[awesomegee: 
+- [Alberta Government Open Data](https://open.alberta.ca/opendata)
+- [AltaLIS Open Data](https://www.altalis.com/)
+- [Arctic-Boreal Vulnerability Experiment (ABoVE) Products](https://daac.ornl.gov/cgi-bin/dataset_lister.pl?p=34)
+- [Awesome GEE Community Catalog](https://developers.google.com/earth-engine/datasets)
+- [Google Earth Engine Data Catalog](https://developers.google.com/earth-engine/datasets)
+- [National Terrestrial Ecosystem Monitoring System for Canada (NTEMS)](https://opendata.nfis.org/mapserver/nfis-change_eng.html).
 
+Spectral Indices
 
+- [Awesome Spectral Indices](https://github.com/awesome-spectral-indices/awesome-spectral-indices?tab=readme-ov-file)
 
 ## Scripts for extracting and processing spatial data
 
-### Google Earth Engine
-
-
-
-### R
-
-
-
+- [Google Earth Engine Functions](https://github.com/bgcasey/google_earth_engine_functions)
+- R
+- ArcGIS Python
 
 ## Metadata standards
 
