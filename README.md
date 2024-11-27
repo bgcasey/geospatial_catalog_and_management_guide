@@ -1,7 +1,7 @@
 # Spatial Data Catalog and Management Guide
 ![In Development](https://img.shields.io/badge/Status-In%20Development-yellow)
 
-A spatial data catalog and guide for sourcing, organizing, and extracting spatial covariates. View a working list of predictor variables [here]().
+A spatial data catalog and guide for sourcing, organizing, and extracting spatial covariates. View a working list of predictor variables [here](https://github.com/bgcasey/spatial_data_catalog/blob/main/predictor_variable_list.csv).
 
 ---
 
