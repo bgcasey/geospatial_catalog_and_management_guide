@@ -115,4 +115,4 @@ Habitat,Terrain,regional,17,Topographic Wetness Index,TWI,ln(α/tanβ)) where α
 Habitat,Vegetation structure,regional,3,Biomass,biomass,Aboveground tree biomass (tons/ha),,30,1985,2020,guindonNewApproachSpatializing2024a,"(Guindon et al., 2024)",https://doi.org/10.1139/cjfr-2023-0118,,,,,,,,,,,,,
 Habitat,Vegetation structure,regional,3,Crown Closure,closure,Tree canopy coverage (%),,30,1985,2020,guindonNewApproachSpatializing2024a,"(Guindon et al., 2024)",https://doi.org/10.1139/cjfr-2023-0118,,,,,,,,,,,,,
 Habitat,Vegetation structure,regional,3,Height,height,Vegetation height (m),,30,1985,2020,guindonNewApproachSpatializing2024a,"(Guindon et al., 2024)",https://doi.org/10.1139/cjfr-2023-0118,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,
+
