@@ -10,6 +10,7 @@ A spatial data catalog and guide for sourcing, organizing, and extracting spatia
 - [2. Scripts for Extracting and Processing Spatial Data](#2-scripts-for-extracting-and-processing-spatial-data)
 - [3. Metadata Standards](#3-metadata-standards)
 - [4. Data Storage](#4-data-storage)
+- [5. Spatial Data Storage and Extraction Workflow](#4-spatial-data-storage-and-extraction-workflow)
 
 ---
 
@@ -115,4 +116,6 @@ Spatial data should be organized by data type and include all of the necessary p
 | │   ├── <span style="color:#008E90FF">canopy_cv_process.{js, R, py}</span>     | Preprocessing script for canopy CV spatial data                                            |
 | │   ├── <span style="color:#008E90FF">canopy_cv_extract.R</span>               | R file for summarizing canopy CV data to point locations                             |
 
+---
 
+## 4. Spatial Data Storage and Extraction Workflow
