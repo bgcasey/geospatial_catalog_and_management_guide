@@ -10,7 +10,7 @@ A spatial data catalog and guide for sourcing, organizing, and extracting spatia
 - [2. Scripts for Extracting and Processing Spatial Data](#2-scripts-for-extracting-and-processing-spatial-data)
 - [3. Metadata Standards](#3-metadata-standards)
 - [4. Data Storage](#4-data-storage)
-- [5. Spatial Data Storage and Extraction Workflow](#4-spatial-data-storage-and-extraction-workflow)
+- [5. Spatial Data Storage and Extraction Workflow](#5-spatial-data-storage-and-extraction-workflow)
 
 ---
 
