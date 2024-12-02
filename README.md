@@ -6,7 +6,7 @@ A spatial data catalog and guide for sourcing, organizing, and extracting spatia
 ---
 
 ## Table of Contents
-- [1. External Catalogs](#1-external-catalogs)
+- [1. Data Catalogs](#1-data-catalogs)
 - [2. Scripts for Extracting and Processing Spatial Data](#2-scripts-for-extracting-and-processing-spatial-data)
 - [3. Metadata Standards](#3-metadata-standards)
 - [4. Data Storage](#4-data-storage)
@@ -55,7 +55,7 @@ All spatial data should include a `readme.txt` file with metadata that complies 
 - **Lineage**: Origin, processing history, and data sources.
 - **Access and Use Constraints**: Licensing, usage rights, and restrictions.
 
-See the [Spatial Metadata Template](spatial_metadata_template) for more information. 
+See the [Spatial Metadata Template](spatial_metadata_template.txt) for more information. 
 
 ---
 
