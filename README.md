@@ -17,7 +17,7 @@ A spatial data catalog and guide for sourcing, organizing, and extracting spatia
 ## 1. Data Catalogs
 
 ### 1.1 Internal Catalog
-- [predictor_variable_list.csv](predictor_variable_list.csv)
+- [Predictor Variable List](predictor_variable_list.csv)
 
 
 ### 1.2 External Catalog
