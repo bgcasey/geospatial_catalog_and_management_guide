@@ -38,15 +38,18 @@ A spatial data catalog and guide for sourcing, organizing, and extracting spatia
 
 ## 3. Metadata Standards
 
-All spatial data should include a `readme.txt` file with metadata that complies with the **ISO 19115: Geographic Information - Metadata Standard** and should include:
+All spatial data should include a `readme.txt` file with metadata that complies with the **[North American Profile (NAP) of the ISO 19115: Geographic Information – Metadata Standard](https://www.fgdc.gov/standards/projects/incits-l1-standards-projects/NAP-Metadata)**. Metadata should include:
 
-- **Title**: Dataset name (e.g., "Global Land Cover 2020").
-- **Abstract**: A brief description of the data.
-- **Spatial extent**: Bounding coordinates.
-- **Temporal extent**: Date range of data collection.
-- **Resolution**: Spatial and temporal.
-- **Source**: Original provider (e.g., NASA, Copernicus).
-- **Licensing**: Usage rights and restrictions.
+
+- **Title**: Clear and descriptive name.
+- **Abstract**: Concise summary of the dataset's purpose, content, and scope.
+- **Spatial Extent**: Bounding coordinates.
+- **Temporal Extent**: Timeframe of data (e.g., 2010–2020 or "Ongoing").
+- **Spatial and Temporal Resolution**: The granularity of the data (e.g., "30m resolution, monthly intervals").
+- **Lineage**: Origin and processing history, including data sources.
+- **Access and Use Constraints**: Licensing, usage rights, and restrictions.
+
+
 
 ---
 
