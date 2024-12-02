@@ -55,7 +55,7 @@ All spatial data should include a `readme.txt` file with metadata that complies 
 - **Lineage**: Origin, processing history, and data sources.
 - **Access and Use Constraints**: Licensing, usage rights, and restrictions.
 
-See the [Spatial Metadata Template](spatial_metadata_template.txt) for more information. 
+See the [Spatial Metadata Template](spatial_metadata_template) for more information. 
 
 ---
 
