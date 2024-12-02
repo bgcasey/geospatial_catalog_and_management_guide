@@ -119,3 +119,13 @@ Spatial data should be organized by data type and include all of the necessary p
 ---
 
 ## 5. Spatial Data Storage and Extraction Workflow
+
+```mermaid
+graph TD
+    A[Source Spatial Data] --> B[Preprocess Data]
+    B --> C[Download Data]
+    C --> D[Store Data]
+    D --> E[Extract Data to ABMI Points]
+
+    click A href "https://github.com/bgcasey/spatial_data_catalog/blob/main/predictor_variable_list.csv" "Go to Predictor Variable List"
+```
