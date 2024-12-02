@@ -118,4 +118,4 @@ Spatial data should be organized by data type and include all of the necessary p
 
 ---
 
-## 4. Spatial Data Storage and Extraction Workflow
+## 5. Spatial Data Storage and Extraction Workflow
