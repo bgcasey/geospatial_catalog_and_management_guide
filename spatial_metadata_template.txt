@@ -77,3 +77,6 @@ ADDITIONAL INFORMATION
 Metadata Date: [YYYY-MM-DD]
     Date the metadata was last updated.
 
+Data Citation: [Bibliography entry]
+DOI:
+
