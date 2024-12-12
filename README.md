@@ -111,6 +111,8 @@ See the [Spatial Metadata Template](spatial_metadata_template.txt) for more info
 
 ## 5. Spatial Data Storage and Extraction Workflow
 
+The workflow begins with sourceing biologically relevent spatial data determining if it needs to be manaully derived using Google Earth Engine (GEE). If yes, preprocessing is done using GEE. Once preprocessed the spatial data is exported to a personal Google Drive folder, and subsequently stored in a temporary folder for further preprocessing. Non-GEE data is assessed to check if preprocessing is required. If preprocessing is necessary, the data is also stored in the temporary folder and processed. Once ready, preprocessed data is stored within a subdirectory of the thematic folder corresponding to its topic category (e.g. biota, elevation, or inlandWaters). Along with the spatial data, a metadata file documenting the preprocessing steps is within the same directory. Finally, the processed data is extracted to specific points for further analysis.
+
 ```mermaid
 graph TD
     A[Source Spatial Data] --> B{Is the data <br> derived using Google Earth Engine?}
