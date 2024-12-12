@@ -1,7 +1,15 @@
 # Spatial Data Catalog and Management Guide
 ![In Development](https://img.shields.io/badge/Status-In%20Development-yellow)
 
-A spatial data catalog and guide for sourcing, organizing, and extracting spatial covariates. View a working list of predictor variables [here](https://github.com/bgcasey/spatial_data_catalog/blob/main/predictor_variable_list.csv).
+A spatial data catalog and data management guide. 
+
+for sourcing, organizing, and extracting spatial covariates. View a working list of predictor variables [here](https://github.com/bgcasey/spatial_data_catalog/blob/main/predictor_variable_list.csv).
+
+The catalog documents all spatial data that has been pre-processed for the ABMI Science Centre. The catalog includes metadata, the relative path to the data on the Science Centre's internal server, and links to preprocessing scripts. 
+
+This is a sibling repository to the Science Centre's geoprocessing/extraction repository.
+Which contains genalized preprossing scripts and functions and vignette for summarizing spatial data to points and polygons using R.
+
 
 ---
 
@@ -62,59 +70,40 @@ See the [Spatial Metadata Template](spatial_metadata_template.txt) for more info
 
 ## 4. Data Storage
 
-Once downloaded, data should be stored in separate folders with the following structure. 
-Spatial data should be organized by data type and include all of the necessary preprocessing and data extraction scripts to ensure efficient and reproducible workflows.
+Once downloaded, data should be stored in a spatial data directory with folders organized by data thematic type. The script [create_spatial_data_dir.py](scripts/create_spatial_data_dir.py) can be used to create an empty directory. Each spatial dataset should be stored in a subfolder stored within the corresponding thematic folder. Thematic folders are based on [ISO 19115 Topic Categories](https://nap.geogratis.gc.ca/metadata/register/registerItems-eng.html#RI_653). 
+
+| **Folder (ISO Topic Category Name)** | **Description**                                                                  | **Examples**                                                                                                                                                                       |
+| ------------------------------------ | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **farming**                          | Rearing of animals and/or cultivation of plants.                                 | Agriculture, irrigation, aquaculture, plantations, herding, pests and diseases affecting crops and livestock.                                                                      |
+| **biota**                            | Flora and/or fauna in natural environments.                                      | Wildlife, vegetation, biological sciences, ecology, wilderness areas, wetlands, habitat.                                                                                           |
+| **boundaries**                       | Legal land descriptions.                                                         | Political and administrative boundaries.                                                                                                                                           |
+| **climatologyMeteorologyAtmosphere** | Processes and phenomena of the atmosphere.                                       | Cloud cover, weather, climate, atmospheric conditions, climate change, precipitation.                                                                                              |
+| **economy**                          | Economic activities, conditions, and employment.                                 | Production, labor, revenue, commerce, industry, tourism, forestry, fisheries, commercial or subsistence hunting.                                                                   |
+| **elevation**                        | Height above or below sea level.                                                 | Altitude, bathymetry, digital elevation models, slope, derived products.                                                                                                           |
+| **environment**                      | Environmental resources, protection, and conservation.                           | Environmental pollution, waste storage and treatment, environmental impact assessment, monitoring environmental risk, nature reserves.                                             |
+| **geoscientificInformation**         | Information pertaining to earth sciences.                                        | Geology, minerals, geophysical features and processes, hydrology, glacial geology, erosion, geomorphology, sedimentation.                                                          |
+| **health**                           | Health, health services, human ecology, and safety.                              | Disease, illness, public health, health services.                                                                                                                                  |
+| **imageryBaseMapsEarthCover**        | Base maps.                                                                       | Land cover, topographic maps, imagery, annotations.                                                                                                                                |
+| **intelligenceMilitary**             | Military bases, structures, activities.                                          | Barracks, training grounds, military transportation, information collection.                                                                                                       |
+| **inlandWaters**                     | Inland water features, drainage systems, and their characteristics.              | Rivers and glaciers, salt lakes, water utilization plans, dams, currents, floods, water quality, hydrographic charts.                                                              |
+| **location**                         | Positional information and services.                                             | Addresses, geodetic networks, control points, postal zones, place names.                                                                                                           |
+| **oceans**                           | Features and characteristics of salt water bodies (excluding inland waters).     | Tides, tidal waves, coastal information, reefs.                                                                                                                                    |
+| **planningCadastre**                 | Information used for appropriate actions for future use of the land.             | Land use maps, zoning maps, cadastral surveys, land ownership.                                                                                                                     |
+| **society**                          | Characteristics of society and culture.                                          | Settlements, anthropology, archaeology, education, traditional beliefs, manners and customs, demographic data, recreational areas and activities.                                  |
+| **structure**                        | Man-made construction.                                                           | Buildings, museums, churches, factories, housing, monuments, shops, towers.                                                                                                        |
+| **transportation**                   | Means and aids for conveying persons and/or goods.                               | Roads, airports, airstrips, shipping routes, tunnels, nautical charts, vehicle and vessel locations, aeronautical charts, railways, trails.                                        |
+| **utilitiesCommunication**           | Energy, water and waste systems, and communications infrastructure and services. | Hydro-electricity, geothermal, solar and nuclear sources of energy, water purification, sewage treatment, electricity and gas distribution, data communication, telecommunication. |
 
 
-| **Item**                                                              | **Description**                                                                                         |
-| --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| <span style="color:#7D3C98">**data_type/**</span>                     | Folder for organizing data by type (climate, vegetation structure, spectral, etc.)                      |
-| ├── <span style="color:#5E2D30FF">**data/**</span>                    | Folder containing the spatial data (rasters, shapefiles) and metadata                                   |
-| │   ├── <span style="color:#008E90FF">data.tif</span>                 | Raster data                                                                                             |
-| │   ├── <span style="color:#008E90FF">data.shp</span>                 | Vector data                                                                                             |
-| │   ├── <span style="color:#008E90FF">readme.md</span>                | Readme file includes a product description, citation, and metadata                                      |
-| │   ├── <span style="color:#008E90FF">data_process.{js, R, py}</span> | Data preprocessing script (e.g., calculate indices, mosaic tiles, calculate focal statistics, etc.) |
-| │   ├── <span style="color:#008E90FF">data_extract.R</span>           | Reproducable R script for summarizing spatial data to point locations                                                  |
+Spatial data folders should include all data and metadata necessary to ensure efficient and reproducible workflows.
 
-
-**Example directory:**
-
-
-| **Item**                                                                       | **Description**                                                                      |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| <span style="color:#7D3C98">**climate/**</span>                                | Folder for climate-related data sources                                              |
-| ├── <span style="color:#5E2D30FF">**temperature/**</span>                      | Subfolder for temperature data                                                       |
-| │   ├── <span style="color:#008E90FF">temperature.tif</span>                   | Raster data for temperature                                                          |
-| │   ├── <span style="color:#008E90FF">readme.md</span>                         | Readme file includes a product description, citation, and metadata for temperature   |
-| │   ├── <span style="color:#008E90FF">temperature_process.{js, R, py}</span>   | Preprocessing script for temperature spatial data                                           |
-| │   ├── <span style="color:#008E90FF">temperature_extract.R</span>             | R file for summarizing temperature data to point locations                           |
-| ├── <span style="color:#5E2D30FF">**precipitation/**</span>                    | Subfolder for precipitation data                                                     |
-| │   ├── <span style="color:#008E90FF">precipitation.tif</span>                 | Raster data for precipitation                                                        |
-| │   ├── <span style="color:#008E90FF">readme.md</span>                         | Readme file includes a product description, citation, and metadata for precipitation |
-| │   ├── <span style="color:#008E90FF">precipitation_process.{js, R, py}</span> | Preprocessing script for precipitation spatial data                                         |
-| │   ├── <span style="color:#008E90FF">precipitation_extract.R</span>           | R file for summarizing precipitation data to point locations                         |
-| <span style="color:#7D3C98">**spectral/**</span>                               | Folder for spectral-related data sources                                             |
-| ├── <span style="color:#5E2D30FF">**NDVI/**</span>                             | Subfolder for NDVI (Normalized Difference Vegetation Index) data                     |
-| │   ├── <span style="color:#008E90FF">NDVI.tif</span>                          | Raster data for NDVI                                                                 |
-| │   ├── <span style="color:#008E90FF">readme.md</span>                         | Readme file includes a product description, citation, and metadata for NDVI          |
-| │   ├── <span style="color:#008E90FF">NDVI_process.{js, R, py}</span>          | Preprocessing script for NDVI spatial data                                                  |
-| │   ├── <span style="color:#008E90FF">NDVI_extract.R</span>                    | R file for summarizing NDVI data to point locations                                  |
-| ├── <span style="color:#5E2D30FF">**NBR/**</span>                              | Subfolder for NBR (Normalized Burn Ratio) data                                       |
-| │   ├── <span style="color:#008E90FF">NBR.tif</span>                           | Raster data for NBR                                                                  |
-| │   ├── <span style="color:#008E90FF">readme.md</span>                         | Readme file includes a product description, citation, and metadata for NBR           |
-| │   ├── <span style="color:#008E90FF">NBR_process.{js, R, py}</span>           | Preprocessing script for NBR spatial data                                                    |
-| │   ├── <span style="color:#008E90FF">NBR_extract.R</span>                     | R file for summarizing NBR data to point locations                                   |
-| <span style="color:#7D3C98">**vegetation_structure/**</span>                   | Folder for vegetation structure-related data sources                                 |
-| ├── <span style="color:#5E2D30FF">**canopy_height/**</span>                    | Subfolder for canopy height data                                                     |
-| │   ├── <span style="color:#008E90FF">canopy_height.tif</span>                 | Raster data for canopy height                                                        |
-| │   ├── <span style="color:#008E90FF">readme.md</span>                         | Readme file includes a product description, citation, and metadata for canopy height |
-| │   ├── <span style="color:#008E90FF">canopy_height_process.{js, R, py}</span> | Preprocessing script for canopy height spatial data                                         |
-| │   ├── <span style="color:#008E90FF">canopy_height_extract.R</span>           | R file for summarizing canopy height data to point locations                         |
-| ├── <span style="color:#5E2D30FF">**canopy_cv/**</span>                        | Subfolder for canopy coefficient of variation (CV) data                              |
-| │   ├── <span style="color:#008E90FF">canopy_cv.tif</span>                     | Raster data for canopy CV                                                            |
-| │   ├── <span style="color:#008E90FF">readme.md</span>                         | Readme file includes a product description, citation, and metadata for canopy CV     |
-| │   ├── <span style="color:#008E90FF">canopy_cv_process.{js, R, py}</span>     | Preprocessing script for canopy CV spatial data                                            |
-| │   ├── <span style="color:#008E90FF">canopy_cv_extract.R</span>               | R file for summarizing canopy CV data to point locations                             |
+| **Item**          | **Description**                                                                                                                                                                                                  |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **data_type/**    | Folder for organizing data by thematic type, including climate, vegetation structure, spectral imagery, elevation, or land use. This structure ensures clarity and accessibility for various spatial data types. |
+| ├── **data/**     | Folder containing the spatial data (rasters, shapefiles) and metadata                                                                                                                                            |
+| │   ├── data.tif  | Raster data                                                                                                                                                                                                      |
+| │   ├── data.shp  | Vector data                                                                                                                                                                                                      |
+| │   ├── readme.md | Readme file includes product metadata, description, citation, and GitHub links to preprocessing scripts.                                                                                                         |
 
 ---
 
@@ -122,10 +111,13 @@ Spatial data should be organized by data type and include all of the necessary p
 
 ```mermaid
 graph TD
-    A[Source Spatial Data] --> B[Preprocess Data]
-    B --> C[Download Data]
-    C --> D[Store Data]
-    D --> E[Extract Data to ABMI Points]
+    A[Source Spatial Data] --> B{Does the sourced data <br> require preprocessing?}
+    B -->|Yes| C[Preprocess Data]
+    B -->|No| D[Download Data]
+    C --> D[Download Data]
+    D --> E[Store Data]
+    E --> F[Extract Data to ABMI Points]
 
     click A href "https://github.com/bgcasey/spatial_data_catalog/blob/main/predictor_variable_list.csv" "Go to Predictor Variable List"
+
 ```
