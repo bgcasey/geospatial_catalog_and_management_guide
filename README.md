@@ -16,19 +16,19 @@ Which contains genalized preprossing scripts, Google Earth Engine, functions and
 ## Table of Contents
 - [1. Data Catalogs](#1-data-catalogs)
 - [2. Scripts for Extracting and Processing Spatial Data](#2-scripts-for-extracting-and-processing-spatial-data)
-- [3. Metadata Standards](#3-metadata-standards)
-- [4. Data Storage](#4-data-storage)
+- [3. Data Storage](#3-data-storage)
+- [4. Metadata Standards](#4-metadata-standards)
 - [5. Spatial Data Storage and Extraction Workflow](#5-spatial-data-storage-and-extraction-workflow)
 
 ---
 
 ## 1. Data Catalogs
 
-### 1.1 Internal Catalog
+### Internal Catalog
 - [Predictor Variable List](predictor_variable_list.csv)
+- Spatial data stored on the Science Centre's server.
 
-
-### 1.2 External Catalog
+### External Catalogs
 
 - [Alberta Government Open Data](https://open.alberta.ca/opendata)
 - [AltaLIS Open Data](https://www.altalis.com/)
@@ -51,24 +51,7 @@ Which contains genalized preprossing scripts, Google Earth Engine, functions and
 
 ---
 
-## 3. Metadata Standards
-
-All spatial data should include a `readme.txt` file with metadata that complies with the **[North American Profile (NAP) of the ISO 19115: Geographic Information – Metadata Standard](https://www.fgdc.gov/standards/projects/incits-l1-standards-projects/NAP-Metadata)**. Metadata should include:
-
-
-- **Title**: Clear and descriptive name.
-- **Abstract**: Concise summary of the dataset's purpose, content, and scope.
-- **Spatial Extent**: Bounding coordinates.
-- **Temporal Extent**: Timeframe of data (e.g., 2010–2020 or "Ongoing").
-- **Spatial and Temporal Resolution**: The granularity of the data (e.g., "30m resolution, monthly intervals").
-- **Lineage**: Origin, processing history, and data sources.
-- **Access and Use Constraints**: Licensing, usage rights, and restrictions.
-
-See the [Spatial Metadata Template](spatial_metadata_template.txt) for more information. 
-
----
-
-## 4. Data Storage
+## 3. Data Storage
 
 Once downloaded, data should be stored in a spatial data directory with folders organized by data thematic type. The script [create_spatial_data_dir.py](scripts/create_spatial_data_dir.py) can be used to create an empty directory. Each spatial dataset should be stored in a subfolder stored within the corresponding thematic folder. Thematic folders are based on [ISO 19115 Topic Categories](https://nap.geogratis.gc.ca/metadata/register/registerItems-eng.html#RI_653). 
 
@@ -94,6 +77,9 @@ Once downloaded, data should be stored in a spatial data directory with folders 
 | **transportation**                   | Means and aids for conveying persons and/or goods.                               | Roads, airports, airstrips, shipping routes, tunnels, nautical charts, vehicle and vessel locations, aeronautical charts, railways, trails.                                        |
 | **utilitiesCommunication**           | Energy, water and waste systems, and communications infrastructure and services. | Hydro-electricity, geothermal, solar and nuclear sources of energy, water purification, sewage treatment, electricity and gas distribution, data communication, telecommunication. |
 
+---
+
+## 4. Metadata Standards
 
 Spatial data folders should include all data and metadata necessary to ensure efficient and reproducible workflows.
 
@@ -104,6 +90,22 @@ Spatial data folders should include all data and metadata necessary to ensure ef
 | │   ├── data.tif  | Raster data                                                                                                                                                                                                      |
 | │   ├── data.shp  | Vector data                                                                                                                                                                                                      |
 | │   ├── readme.md | Readme file includes product metadata, description, citation, and GitHub links to preprocessing scripts.                                                                                                         |
+
+
+
+All spatial data should include a `readme.txt` file with metadata that complies with the **[North American Profile (NAP) of the ISO 19115: Geographic Information – Metadata Standard](https://www.fgdc.gov/standards/projects/incits-l1-standards-projects/NAP-Metadata)**. Metadata should include:
+
+
+- **Title**: Clear and descriptive name.
+- **Abstract**: Concise summary of the dataset's purpose, content, and scope.
+- **Spatial Extent**: Bounding coordinates.
+- **Temporal Extent**: Timeframe of data (e.g., 2010–2020 or "Ongoing").
+- **Spatial and Temporal Resolution**: The granularity of the data (e.g., "30m resolution, monthly intervals").
+- **Lineage**: Origin, processing history, and data sources.
+- **Access and Use Constraints**: Licensing, usage rights, and restrictions.
+
+See the [Spatial Metadata Template](spatial_metadata_template.txt) for more information. 
+
 
 ---
 
