@@ -113,13 +113,35 @@ See the [Spatial Metadata Template](spatial_metadata_template.txt) for more info
 
 ```mermaid
 graph TD
-    A[Source Spatial Data] --> B{Does the sourced data <br> require preprocessing?}
-    B -->|Yes| C[Preprocess Data]
-    B -->|No| D[Download Data]
-    C --> D[Download Data]
-    D --> E[Store Data]
-    E --> F[Extract Data to ABMI Points]
+    A[Source Spatial Data] --> B{Is the data <br> derived using Google Earth Engine?}
+    B -->|Yes| C[Preprocess in GEE]
+    B -->|No| D{Does the data <br> require preprocessing?}
+    C --> E[Download to personal Google Drive folder]
+    E --> F[(Temp Folder)]
+    F --> G[Preprocess Data: e.g., mosaic raster tiles, spatial transformations, focal analyses, etc]    
+    G --> H[(Thematic Folder)]
+    D -->|Yes| F
+    D -->|No| H
+    J[[Readme with metadata]]
 
-    click A href "https://github.com/bgcasey/spatial_data_catalog/blob/main/predictor_variable_list.csv" "Go to Predictor Variable List"
+    J --> H
+    H --> I[Extract Data to Points]
 
+    %% Node styles with clean white background
+    style A fill:#FFFFFF,stroke:#000000,stroke-width:1px,color:black
+    style B fill:#FFFFFF,stroke:#000000,stroke-width:2px,color:black
+    style C fill:#FFFFFF,stroke:#000000,stroke-width:1px,color:black
+    style D fill:#FFFFFF,stroke:#000000,stroke-width:2px,color:black
+    style E fill:#FFFFFF,stroke:#000000,stroke-width:1px,color:black
+    style F fill:#FFFFFF,stroke:#000000,stroke-width:3px,color:black
+    style G fill:#FFFFFF,stroke:#000000,stroke-width:1px,color:black
+    style H fill:#FFFFFF,stroke:#000000,stroke-width:3px,color:black
+    style I fill:#FFFFFF,stroke:#000000,stroke-width:1px,color:black
+    style J fill:#FFFFFF,stroke:#000000,stroke-width:1px,color:black
+
+    %% Connector styles for "Yes" and "No"
+    linkStyle 0 stroke:#000000,stroke-width:1px,fill:none,color:black
+    linkStyle 1 stroke:#000000,stroke-width:1px,fill:none,color:black
+    linkStyle 2 stroke:#000000,stroke-width:1px,fill:none,color:black
+    linkStyle 3 stroke:#000000,stroke-width:1px,fill:none,color:black
 ```
