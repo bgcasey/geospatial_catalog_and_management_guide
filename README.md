@@ -3,7 +3,15 @@
 
 Here, we provide of catalog of all of geospatial data gathered and managed by the Science Centre, and R package/vignette for querying the catalog, links to external catalogs, and guide for the internal management of geospatial data.
 
-The catalog documents all spatial data that has been pre-processed for the ABMI Science Centre. The catalog includes metadata, the relative path to the data on the Science Centre's internal server, and links to preprocessing scripts. In addition, a working list of predictor variables [here](https://github.com/bgcasey/spatial_data_catalog/blob/main/predictor_variable_list.csv).
+The catalog documents all spatial data that has been pre-processed for the ABMI Science Centre. 
+
+The catalog includes:
+
+    Metadata for each dataset.
+    Relative paths to the data stored on the Science Centre's internal server.
+    Links to associated preprocessing scripts.
+
+In addition, a working list of predictor variables [here](https://github.com/bgcasey/spatial_data_catalog/blob/main/predictor_variable_list.csv).
 
 This is a sibling repository to the Science Centre's [Geospatial Preprocessing and Extraction Toolkit](https://github.com/bgcasey/geospatial_preprocessing_and_extraction_toolkit).
 The toolkit contains genalized preprossing scripts, Google Earth Engine functions, and a vignette for summarizing spatial data to points and polygons using R.
@@ -50,7 +58,9 @@ The toolkit contains genalized preprossing scripts, Google Earth Engine function
 
 ## 3. Data Storage
 
-Once downloaded, data should be stored in a spatial data directory with folders organized by data thematic type. The script [create_spatial_data_dir.py](scripts/create_spatial_data_dir.py) can be used to create an empty directory. Each spatial dataset should be stored in a subfolder stored within the corresponding thematic folder. Thematic folders are based on [ISO 19115 Topic Categories](https://nap.geogratis.gc.ca/metadata/register/registerItems-eng.html#RI_653). 
+Once downloaded, data should be stored in a spatial data directory in folders organized by data thematic type. The script [create_spatial_data_dir.py](scripts/create_spatial_data_dir.py) can be used to create an empty directory. Each spatial dataset should be stored in a subfolder stored within the corresponding thematic folder. Thematic folders are based on [ISO 19115 Topic Categories](https://nap.geogratis.gc.ca/metadata/register/registerItems-eng.html#RI_653). 
+
+**Table 1.** Thematic directories for organizing geospatial data, directory descriptions, and examples of corresponding geospatial data.
 
 | **Folder (ISO Topic Category Name)** | **Description**                                                                  | **Examples**                                                                                                                                                                       |
 | ------------------------------------ | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -80,6 +90,8 @@ Once downloaded, data should be stored in a spatial data directory with folders 
 
 Spatial data folders should include all data and metadata necessary to ensure efficient and reproducible workflows.
 
+**Table 2.** Directory structure for organizing spatial data and metadata, including descriptions of folder contents and file types.
+
 | **Item**          | **Description**                                                                                                                                                                                                  |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **data_type/**    | Folder for organizing data by thematic type, including climate, vegetation structure, spectral imagery, elevation, or land use. This structure ensures clarity and accessibility for various spatial data types. |
@@ -108,7 +120,7 @@ See the [Spatial Metadata Template](spatial_metadata_template.txt) for more info
 
 ## 5. Spatial Data Storage and Extraction Workflow
 
-The workflow begins with sourceing biologically relevent spatial data determining if it needs to be manaully derived using Google Earth Engine (GEE). If yes, preprocessing is done using GEE. Once preprocessed the spatial data is exported to a personal Google Drive folder, and subsequently stored in a temporary folder for further preprocessing. Non-GEE data is assessed to check if preprocessing is required. If preprocessing is necessary, the data is also stored in the temporary folder and processed. Once ready, preprocessed data is stored within a subdirectory of the thematic folder corresponding to its topic category (e.g. biota, elevation, or inlandWaters). Along with the spatial data, a metadata file documenting the preprocessing steps is within the same directory. Finally, the processed data is extracted to specific points for further analysis.
+The workflow begins with sourceing biologically relevent spatial data determining if it needs to be manaully derived using Google Earth Engine (GEE). If yes, preprocessing is done using GEE. Once preprocessed the spatial data is exported to a personal Google Drive folder, and subsequently stored in a temporary folder for further preprocessing. Non-GEE data is assessed to check if preprocessing is required. If preprocessing is necessary, the data is also stored in the temporary folder and processed. Once ready, preprocessed data is stored within a subdirectory of the thematic folder corresponding to its topic category (e.g. biota, elevation, or inlandWaters). Along with the spatial data, a metadata file documenting the preprocessing steps is within the same directory. Finally, the processed data is extracted to specific points for further analysis. 
 
 
 ```mermaid
@@ -156,3 +168,4 @@ graph TD
 
 ```
 
+**Figure 1.** Conceptual diagram of the Science Centre's geospatial data managemet workflow, including sourcing, preprocessing, storage, and extraction.
