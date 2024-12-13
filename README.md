@@ -1,15 +1,12 @@
 # Geospatial Data Catalog and Management Guide
 ![In Development](https://img.shields.io/badge/Status-In%20Development-yellow)
 
-A spatial data catalog and data management guide. 
+Here, we provide of catalog of all of geospatial data gathered and managed by the Science Centre, and R package/vignette for querying the catalog, links to external catalogs, and guide for the internal management of geospatial data.
 
-for sourcing, organizing, and extracting spatial covariates. View a working list of predictor variables [here](https://github.com/bgcasey/spatial_data_catalog/blob/main/predictor_variable_list.csv).
-
-The catalog documents all spatial data that has been pre-processed for the ABMI Science Centre. The catalog includes metadata, the relative path to the data on the Science Centre's internal server, and links to preprocessing scripts. 
+The catalog documents all spatial data that has been pre-processed for the ABMI Science Centre. The catalog includes metadata, the relative path to the data on the Science Centre's internal server, and links to preprocessing scripts. In addition, a working list of predictor variables [here](https://github.com/bgcasey/spatial_data_catalog/blob/main/predictor_variable_list.csv).
 
 This is a sibling repository to the Science Centre's [Geospatial Preprocessing and Extraction Toolkit](https://github.com/bgcasey/geospatial_preprocessing_and_extraction_toolkit).
 The toolkit contains genalized preprossing scripts, Google Earth Engine functions, and a vignette for summarizing spatial data to points and polygons using R.
-
 
 ---
 
