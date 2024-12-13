@@ -113,37 +113,49 @@ See the [Spatial Metadata Template](spatial_metadata_template.txt) for more info
 
 The workflow begins with sourceing biologically relevent spatial data determining if it needs to be manaully derived using Google Earth Engine (GEE). If yes, preprocessing is done using GEE. Once preprocessed the spatial data is exported to a personal Google Drive folder, and subsequently stored in a temporary folder for further preprocessing. Non-GEE data is assessed to check if preprocessing is required. If preprocessing is necessary, the data is also stored in the temporary folder and processed. Once ready, preprocessed data is stored within a subdirectory of the thematic folder corresponding to its topic category (e.g. biota, elevation, or inlandWaters). Along with the spatial data, a metadata file documenting the preprocessing steps is within the same directory. Finally, the processed data is extracted to specific points for further analysis.
 
+
 ```mermaid
 graph TD
     A[Source Spatial Data] --> B{Is the data <br> derived using Google Earth Engine?}
     B -->|Yes| C[Preprocess in GEE]
     B -->|No| D{Does the data <br> require preprocessing?}
-    C --> E[Download to personal Google Drive folder]
-    E --> F[(Temp Folder)]
-    F --> G[Preprocess Data: e.g., mosaic raster tiles, spatial transformations, focal analyses, etc]    
-    G --> H[(Thematic Folder)]
-    D -->|Yes| F
-    D -->|No| H
-    J[[Readme with metadata]]
+    C --> E[[Save and Document Preprocessing Code]]
+    C --> F[Download to Personal Google Drive Folder]
+    F --> G[/Temp Folder/]
+    G --> H[Preprocess Data: e.g., mosaic raster tiles, spatial transformations, focal analyses, etc]    
+    H --> E
+    H ---> I[/Thematic Folder/]
+    
+    D -->|Yes| G
+    D -->|No| I
+    J[[Readme with Metadata]]
+    
+    I --> L[(Catalog)]
+    J --> L
+    J --> I
+    E --> L
+    I --> K[Extract Data to Points]
 
-    J --> H
-    H --> I[Extract Data to Points]
 
-    %% Node styles with clean white background
+    %% Node styles with clean white background and adjusted stroke widths
     style A fill:#FFFFFF,stroke:#000000,stroke-width:1px,color:black
     style B fill:#FFFFFF,stroke:#000000,stroke-width:2px,color:black
     style C fill:#FFFFFF,stroke:#000000,stroke-width:1px,color:black
     style D fill:#FFFFFF,stroke:#000000,stroke-width:2px,color:black
-    style E fill:#FFFFFF,stroke:#000000,stroke-width:1px,color:black
-    style F fill:#FFFFFF,stroke:#000000,stroke-width:3px,color:black
+    style E fill:#FFFFFF,stroke:#000000,stroke-width:3px,color:black
+    style F fill:#FFFFFF,stroke:#000000,stroke-width:1px,color:black
     style G fill:#FFFFFF,stroke:#000000,stroke-width:1px,color:black
-    style H fill:#FFFFFF,stroke:#000000,stroke-width:3px,color:black
-    style I fill:#FFFFFF,stroke:#000000,stroke-width:1px,color:black
-    style J fill:#FFFFFF,stroke:#000000,stroke-width:1px,color:black
+    style H fill:#FFFFFF,stroke:#000000,stroke-width:1px,color:black
+    style I fill:#FFFFFF,stroke:#000000,stroke-width:3px,color:black
+    style J fill:#FFFFFF,stroke:#000000,stroke-width:3px,color:black
+    style K fill:#FFFFFF,stroke:#000000,stroke-width:1px,color:black
+    style L fill:#f4f4f4,stroke:#000000,stroke-width:3px,color:black
 
     %% Connector styles for "Yes" and "No"
     linkStyle 0 stroke:#000000,stroke-width:1px,fill:none,color:black
     linkStyle 1 stroke:#000000,stroke-width:1px,fill:none,color:black
     linkStyle 2 stroke:#000000,stroke-width:1px,fill:none,color:black
     linkStyle 3 stroke:#000000,stroke-width:1px,fill:none,color:black
+
 ```
+
