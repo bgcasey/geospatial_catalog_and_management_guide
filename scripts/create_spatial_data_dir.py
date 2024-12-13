@@ -1,19 +1,51 @@
+"""
+---
+title: Create Spatial Data Directory
+author: Brendan Casey
+created: 2024-12-11
+inputs: None
+outputs: Creates a structured directory based on ISO topic categories. 
+         Generates `readme.txt` files with default descriptions of 
+         each top level folder in the directory. 
+notes: 
+  This script creates a structured directory for spatial data
+  based on ISO topic categories. Each top-level folder corresponds
+  to a topic category and contains subfolders for specific data
+  types. Each top-level folder includes a `readme.txt` file with
+  the category's description and example data types. A `temp`
+  folder is created for preprocessing products.
+---
+"""
+
+# 1. Setup
+# --------
+
+## 1.1 Import Required Libraries
 import os
 import textwrap
 
-# This script creates a structured directory for spatial data
-# based on ISO topic categories. Each top-level folder corresponds
-# to a topic category and contains subfolders for specific data
-# types. Each top-level folder includes a `readme.txt` file with
-# the category's description and example data types. A `temp`
-# folder is created for preprocessing products.
-
-# Function to wrap text to a specific line width
+## 1.2 Define Helper Function
 def wrap_text(text, width=70):
+    """
+    Wraps the input text to a specified line width.
+
+    Parameters
+    ----------
+    text : str
+        The input text to be wrapped.
+    width : int, optional
+        The line width to wrap the text to (default is 70).
+    
+    Returns
+    -------
+    str
+        The wrapped text.
+    """
     return "\n".join(textwrap.wrap(text, width=width))
 
-# Dictionary of ISO topic categories with descriptions, examples,
-# and subfolders
+# 2. Define ISO Topic Categories
+# ------------------------------
+
 iso_topic_categories = {
     "farming": {
         "description": "Rearing of animals and/or cultivation of "
@@ -36,39 +68,37 @@ iso_topic_categories = {
     },
     "climatologyMeteorologyAtmosphere": {
         "description": "Processes and phenomena of the atmosphere.",
-        "examples": "Cloud cover, weather, climate, atmospheric "
-                    "conditions, climate change, precipitation.",
-        "subfolders": ["temperature", "atmosphericConditions",
+        "examples": "Cloud cover, weather, climate, atmospheric conditions, "
+                    "climate change, precipitation.",
+        "subfolders": ["temperature", "atmosphericConditions", 
                        "precipitation"]
     },
     "economy": {
-        "description": "Economic activities, conditions, and "
-                       "employment.",
-        "examples": "Production, labor, revenue, commerce, industry, "
-                    "tourism, forestry, fisheries, commercial or "
-                    "subsistence hunting.",
+        "description": "Economic activities, conditions, and employment.",
+        "examples": "Production, labor, revenue, commerce, industry, tourism, "
+                    "forestry, fisheries, commercial or subsistence hunting.",
         "subfolders": ["forestry", "energy"]
     },
     "elevation": {
         "description": "Height above or below sea level.",
-        "examples": "Altitude, bathymetry, digital elevation models, "
-                    "slope, derived products.",
+        "examples": "Altitude, bathymetry, digital elevation models, slope, "
+                    "derived products.",
         "subfolders": ["DEM", "terrainAnalysis"]
     },
     "environment": {
         "description": "Environmental resources, protection, and "
                        "conservation.",
-        "examples": "Environmental pollution, waste storage and "
-                    "treatment, environmental impact assessment, "
-                    "monitoring environmental risk, nature reserves.",
-        "subfolders": ["pollution", "environmentalImpact",
+        "examples": "Environmental pollution, waste storage and treatment, "
+                    "environmental impact assessment, monitoring "
+                    "environmental risk, nature reserves.",
+        "subfolders": ["pollution", "environmentalImpact", 
                        "riskMonitoring"]
     },
     "geoscientificInformation": {
         "description": "Information pertaining to earth sciences.",
-        "examples": "Geology, minerals, geophysical features and "
-                    "processes, hydrology, glacial geology, erosion, "
-                    "geomorphology, sedimentation.",
+        "examples": "Geology, minerals, geophysical features and processes, "
+                    "hydrology, glacial geology, erosion, geomorphology, "
+                    "sedimentation.",
         "subfolders": ["geology", "soil"]
     },
     "imageryBaseMapsEarthCover": {
@@ -77,34 +107,33 @@ iso_topic_categories = {
         "subfolders": ["landCover", "satelliteImagery"]
     },
     "inlandWaters": {
-        "description": "Inland water features, drainage systems, and "
-                       "their characteristics.",
-        "examples": "Rivers and glaciers, salt lakes, water utilization "
-                    "plans, dams, currents, floods, water quality, "
-                    "hydrographic charts.",
+        "description": "Inland water features, drainage systems, and their "
+                       "characteristics.",
+        "examples": "Rivers and glaciers, salt lakes, water utilization plans, "
+                    "dams, currents, floods, water quality, hydrographic "
+                    "charts.",
         "subfolders": ["rivers", "lakes", "waterQuality"]
     },
     "transportation": {
-        "description": "Means and aids for conveying persons and/or "
-                       "goods.",
-        "examples": "Roads, airports, airstrips, shipping routes, "
-                    "tunnels, nautical charts, vehicle and vessel "
-                    "locations, aeronautical charts, railways, trails.",
+        "description": "Means and aids for conveying persons and/or goods.",
+        "examples": "Roads, airports, airstrips, shipping routes, tunnels, "
+                    "nautical charts, vehicle and vessel locations, "
+                    "aeronautical charts, railways, trails.",
         "subfolders": ["roads"]
     }
 }
 
-# Base directory for spatial data
-base_dir = "spatialData"
+# 3. Create Directory Structure
+# -----------------------------
 
-# Create the base directory
+## 3.1 Define Base Directory
+base_dir = "spatialData"
 os.makedirs(base_dir, exist_ok=True)
 
-# Create a temp folder for storing products that require preprocessing
+## 3.2 Create Temp Folder
 temp_dir = os.path.join(base_dir, "temp")
 os.makedirs(temp_dir, exist_ok=True)
 
-# Add a readme.txt file to the temp folder
 temp_readme_path = os.path.join(temp_dir, "readme.txt")
 with open(temp_readme_path, "w") as temp_readme:
     temp_text = (
@@ -115,7 +144,7 @@ with open(temp_readme_path, "w") as temp_readme:
     temp_readme.write(wrap_text(temp_text))
 print("Created temp folder and its readme.txt file.")
 
-# Create topic category folders, subfolders, and readme files
+## 3.3 Create Topic Category Folders
 for category, content in iso_topic_categories.items():
     category_path = os.path.join(base_dir, category)
     os.makedirs(category_path, exist_ok=True)
@@ -125,7 +154,7 @@ for category, content in iso_topic_categories.items():
         subfolder_path = os.path.join(category_path, subfolder)
         os.makedirs(subfolder_path, exist_ok=True)
 
-    # Create readme.txt file with wrapped text
+    # Create readme.txt file for the category
     readme_path = os.path.join(category_path, "readme.txt")
     with open(readme_path, "w") as readme_file:
         category_text = (
@@ -137,7 +166,7 @@ for category, content in iso_topic_categories.items():
     
     print(f"Created folder structure and readme.txt for: {category}")
 
+# End of script
+# -------------
 print("Spatial data directory structure with readme.txt files created "
       "successfully.")
-
-
