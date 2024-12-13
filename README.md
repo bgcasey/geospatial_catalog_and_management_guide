@@ -1,4 +1,4 @@
-# Spatial Data Catalog and Management Guide
+# Geospatial Data Catalog and Management Guide
 ![In Development](https://img.shields.io/badge/Status-In%20Development-yellow)
 
 A spatial data catalog and data management guide. 
