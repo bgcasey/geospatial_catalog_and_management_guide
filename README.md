@@ -7,8 +7,8 @@ for sourcing, organizing, and extracting spatial covariates. View a working list
 
 The catalog documents all spatial data that has been pre-processed for the ABMI Science Centre. The catalog includes metadata, the relative path to the data on the Science Centre's internal server, and links to preprocessing scripts. 
 
-This is a sibling repository to the Science Centre's geoprocessing/extraction repository.
-Which contains genalized preprossing scripts, Google Earth Engine, functions and vignette for summarizing spatial data to points and polygons using R.
+This is a sibling repository to the Science Centre's [Geospatial Preprocessing and Extraction Toolkit](https://github.com/bgcasey/geospatial_preprocessing_and_extraction_toolkit).
+The toolkit contains genalized preprossing scripts, Google Earth Engine functions, and a vignette for summarizing spatial data to points and polygons using R.
 
 
 ---
