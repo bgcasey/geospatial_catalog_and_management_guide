@@ -13,10 +13,9 @@ Here, we provide of catalog of all of geospatial data gathered and managed by th
 The catalog documents all spatial data that has been pre-processed for the ABMI Science Centre. 
 
 The catalog includes:
-
-    Metadata for each dataset.
-    Relative paths to the data stored on the Science Centre's internal server.
-    Links to associated preprocessing scripts.
+- Metadata for each dataset.
+- Relative paths to the data stored on the Science Centre's internal server.
+- Links to associated preprocessing scripts.
 
 In addition, a working list of predictor variables [here](https://github.com/bgcasey/spatial_data_catalog/blob/main/predictor_variable_list.csv).
 
