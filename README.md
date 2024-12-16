@@ -145,7 +145,7 @@ graph TD
     D -->|No| I
     J[[Readme with Metadata]]
     
-    I --> L[(Catalog)]
+    I --> L[(Data Catalog)]
     J --> L
     J --> I
     E --> L
