@@ -23,7 +23,6 @@ In addition, a working list of predictor variables [here](https://github.com/bgc
 This is a sibling repository to the Science Centre's [Geospatial Preprocessing and Extraction Toolkit](https://github.com/bgcasey/geospatial_preprocessing_and_extraction_toolkit).
 The toolkit contains genalized preprossing scripts, Google Earth Engine functions, and a vignette for summarizing spatial data to points and polygons using R.
 
----
 
 ## Table of Contents
 - [1. Data Catalogs](#1-data-catalogs)
