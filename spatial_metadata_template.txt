@@ -20,6 +20,12 @@ Spatial Resolution: [Resolution]
 ==================================================================
 GEOGRAPHIC INFORMATION
 ==================================================================
+Coordinate Reference System:
+    Name:
+    Authority Code:
+    Datum:
+    Projection:
+    Vertical CRS:
 Extent:
     West Bounding Coordinate: [e.g., -120.0]
     East Bounding Coordinate: [e.g., -110.0]
